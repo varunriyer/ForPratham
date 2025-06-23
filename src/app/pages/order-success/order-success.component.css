@@ -1,0 +1,42 @@
+.success-container {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #ffffff;
+}
+
+.success-icon {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #333;
+}
+
+.confirmation-text {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.info-table {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 30px;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.info-table th,
+.info-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+button {
+  padding: 10px 24px;
+  font-size: 14px;
+}

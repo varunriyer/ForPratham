@@ -1,0 +1,75 @@
+<div class="cart-wrapper">
+  <!-- Step 1: My Cart -->
+  <div class="section" *ngIf="currentStep() >= 1">
+    <h2>My cart ({{ cartItems().length }})</h2>
+    <div class="cart-item" *ngFor="let item of cartItems()">
+      <img src="Image 10.png" class="book-img" />
+      <div class="item-details">
+        <div class="title">{{ item.product_id.bookName }}</div>
+        <div class="author">by {{ item.product_id.author }}</div>
+        <div class="price">
+          <span class="disc-price"
+            >Rs. {{ item.product_id.discountPrice }}</span
+          >
+          <span class="org-price">Rs. {{ item.product_id.price }}</span>
+        </div>
+        <div class="qty-control">
+          <button (click)="decrementQty(item)">−</button>
+          <span>{{ item.quantityToBuy }}</span>
+          <button (click)="incrementQty(item)">+</button>
+          <span class="remove" (click)="removeItem(item._id)">Remove</span>
+        </div>
+      </div>
+    </div>
+    <div class="btn-right">
+      <button mat-raised-button color="primary" (click)="nextStep()">
+        PLACE ORDER
+      </button>
+    </div>
+  </div>
+
+  <!-- Step 2: Address -->
+  <div class="section" *ngIf="currentStep() >= 2">
+    <h2>Customer Details</h2>
+    <!-- Simulated address form -->
+    <div class="address-block">
+      <p style="text-transform: capitalize">
+        <strong>Full Name:</strong> {{ fullName }}
+      </p>
+      <p><strong>Mobile:</strong> {{ phone }}</p>
+      <textarea disabled rows="3">
+BridgeLabz Solutions LLP, No. 42, 14th Main, 15th Cross, Sector 4, Opp to BDA Complex, HSR Layout, Bangalore</textarea
+      >
+      <div class="btn-right">
+        <button mat-raised-button color="primary" (click)="nextStep()">
+          CONTINUE
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 3: Order Summary -->
+  <div class="section" *ngIf="currentStep() >= 3">
+    <h2>Order summary</h2>
+    <div class="cart-item" *ngFor="let item of cartItems()">
+      <img src="Image 10.png" class="book-img" />
+      <div class="item-details">
+        <div class="title">{{ item.product_id.bookName }}</div>
+        <div class="author">by {{ item.product_id.author }}</div>
+        <div class="price">
+          <span class="disc-price"
+            >Rs. {{ item.product_id.discountPrice }}</span
+          >
+          <span class="org-price">Rs. {{ item.product_id.price }}</span>
+        </div>
+        <!-- ✅ Display quantity -->
+        <div class="quantity">Quantity: {{ item.quantityToBuy }}</div>
+      </div>
+    </div>
+    <div class="btn-right">
+      <button mat-raised-button color="primary" (click)="placeOrder()">
+        CHECKOUT
+      </button>
+    </div>
+  </div>
+</div>

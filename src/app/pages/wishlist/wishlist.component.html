@@ -1,0 +1,29 @@
+<div class="wishlist-container">
+  <div class="wishlist-header">
+    <h2>
+      My Wishlist ({{ wishlistItems().length.toString().padStart(2, "0") }})
+    </h2>
+  </div>
+
+  <div class="wishlist-item" *ngFor="let item of wishlistItems()">
+    <img src="Image 10.png" alt="Book Image" class="book-img" />
+
+    <div class="item-info">
+      <h3>{{ item.product_id.bookName }}</h3>
+      <p>by {{ item.product_id.author }}</p>
+      <p>
+        <span class="discount-price"
+          >Rs. {{ item.product_id.discountPrice }}</span
+        >
+        <span class="original-price">Rs. {{ item.product_id.price }}</span>
+      </p>
+    </div>
+
+    <mat-icon
+      class="delete-icon"
+      (click)="removeFromWishlist(item.product_id._id)"
+    >
+      delete
+    </mat-icon>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<mat-card
+  class="book-card"
+  matTooltip="Quick View"
+  (click)="goToBookDetails(book._id)"
+>
+  <img mat-card-image src="{{ bookImagePath }}" alt="Book-Image" />
+  <mat-card-content>
+    <div class="book-details">
+      <div class="book-title">{{ book.bookName }}</div>
+      <div class="book-author">{{ book.author }}</div>
+
+      <div class="book-rating">
+        <span class="rating-box">{{ rating }} ★</span>
+        <span class="review-count"> ({{ reviews }})</span>
+      </div>
+
+      <div class="book-price">
+        <span class="current-price">Rs. {{ book.discountPrice }} </span>
+        <span class="original-price">Rs. {{ book.price }}</span>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

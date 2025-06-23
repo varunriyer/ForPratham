@@ -1,0 +1,22 @@
+<div class="home-wrapper">
+  <span>
+    <span class="books-text">Books</span
+    ><span class="items-number"> ({{ books.length }} items)</span></span
+  >
+  <div class="book-grid">
+    <app-book-card
+      *ngFor="let book of displayedBooks"
+      [book]="book"
+    ></app-book-card>
+  </div>
+  <div class="paginator">
+    <mat-paginator
+      [length]="books.length"
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 25]"
+      aria-label="Select page"
+      (page)="onPageChange($event)"
+      >></mat-paginator
+    >
+  </div>
+</div>

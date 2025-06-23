@@ -1,0 +1,74 @@
+.orders-container {
+  padding: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h3 {
+  margin-bottom: 24px;
+  font-size: 22px;
+  color: #333;
+}
+
+.order-card {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e2e2e2;
+  padding: 16px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.book-img {
+  width: 90px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.details {
+  flex-grow: 1;
+}
+
+.details h4 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.details p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.price {
+  margin-top: 8px;
+}
+
+.sale {
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+  margin-right: 12px;
+}
+
+.strike {
+  text-decoration: line-through;
+  color: grey;
+  font-size: 14px;
+}
+
+.order-status {
+  text-align: right;
+  font-size: 14px;
+  color: #333;
+}
+
+.green-dot {
+  height: 10px;
+  width: 10px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}

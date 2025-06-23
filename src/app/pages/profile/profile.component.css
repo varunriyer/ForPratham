@@ -1,0 +1,52 @@
+.profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.breadcrumbs {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.half-width {
+  width: 48%;
+}
+
+.address-row {
+  display: flex;
+  gap: 4%;
+  margin-bottom: 16px;
+}
+
+.edit-btn,
+.cancel-btn {
+  background: none;
+  border: none;
+  color: #c62828;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+.add-address-btn {
+  margin-top: 16px;
+  border: 1px solid #c62828;
+  background: white;
+  color: #c62828;
+  padding: 6px 12px;
+  cursor: pointer;
+}

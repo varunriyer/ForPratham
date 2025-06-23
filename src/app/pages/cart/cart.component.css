@@ -1,0 +1,89 @@
+.cart-wrapper {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.section {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fafafa;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+.book-img {
+  height: 120px;
+  margin-right: 20px;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.author {
+  color: #757575;
+  margin: 4px 0;
+}
+
+.price {
+  display: flex;
+  gap: 10px;
+  margin: 6px 0;
+}
+
+.disc-price {
+  font-weight: bold;
+}
+
+.org-price {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.qty-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.qty-control button {
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+.remove {
+  color: red;
+  cursor: pointer;
+}
+
+.address-block textarea {
+  width: 100%;
+  margin: 10px 0;
+  resize: none;
+}
+
+.btn-right {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.quantity {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #555;
+}

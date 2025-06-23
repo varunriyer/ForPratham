@@ -1,0 +1,50 @@
+.wishlist-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.wishlist-header {
+  background: #f7f7f7;
+  padding: 16px;
+  border-bottom: 1px solid #ddd;
+  font-weight: 600;
+}
+
+.wishlist-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 16px 0;
+}
+
+.book-img {
+  width: 90px;
+  height: 120px;
+  object-fit: cover;
+  margin-right: 24px;
+}
+
+.item-info {
+  flex-grow: 1;
+}
+
+.discount-price {
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.original-price {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.delete-icon {
+  cursor: pointer;
+  color: #888;
+  transition: color 0.3s ease;
+}
+
+.delete-icon:hover {
+  color: red;
+}

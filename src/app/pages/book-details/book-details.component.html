@@ -1,0 +1,99 @@
+<div class="wrapper" *ngIf="book">
+  <div class="left">
+    <div class="book-image-overall">
+      <div class="thumbnail-column">
+        <mat-card class="thumb-card"> </mat-card>
+        <mat-card class="thumb-card"> </mat-card>
+      </div>
+      <mat-card class="book-image-main">
+        <img src="Image 12.png" alt="book-image" />
+      </mat-card>
+    </div>
+
+    <div class="buttons">
+      <!-- Cart Action -->
+      <ng-container *ngIf="!isInCart; else quantityBox">
+        <button class="bag-notify" (click)="addToCart()">
+          {{ book.quantity > 0 ? "Add to Bag" : "Notify Me" }}
+        </button>
+      </ng-container>
+
+      <ng-template #quantityBox>
+        <div class="cart-qty-box">
+          <button (click)="updateQty(-1)">−</button>
+          <span>{{ quantity }}</span>
+          <button (click)="updateQty(1)">+</button>
+        </div>
+      </ng-template>
+
+      <button class="wishlist" (click)="toggleWishlist()">
+        {{ isInWishlist ? "❤️ Wishlisted" : "🤍 Wishlist" }}
+      </button>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="book-title">{{ book.bookName }}</div>
+    <div class="book-author">{{ book.author }}</div>
+    <div class="rating-review">
+      <div class="rating"><span class="rating-text">4.5 ★</span></div>
+      <span class="reviews">(20)</span>
+    </div>
+    <div class="price">
+      <span class="disc-price">Rs. {{ book.discountPrice }}</span>
+      <span class="org-price">Rs. {{ book.price }}</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="book-desc">
+      <div class="book-desc-title">• Book Detail</div>
+      <div class="book-desc-text">
+        {{ book.description }}
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="cust-fb">Customer Feedback</div>
+
+    <!-- Feedback Submission -->
+    <div class="feedback-box">
+      <div class="rating-stars">
+        <mat-icon
+          *ngFor="let s of [1, 2, 3, 4, 5]"
+          (click)="selectRating(s)"
+          [style.color]="s <= newRating ? 'gold' : 'gray'"
+        >
+          star
+        </mat-icon>
+      </div>
+      <textarea
+        placeholder="Write your review"
+        [(ngModel)]="newComment"
+      ></textarea>
+      <div class="submit-container">
+        <button class="submit-btn" (click)="submitFeedback()">Submit</button>
+      </div>
+    </div>
+
+    <!-- Feedback Display -->
+    <div *ngFor="let fb of feedbackList" class="feedback-card">
+      <div class="avatar">
+        {{ fb.user_id.fullName.charAt(0).toUpperCase() }}
+      </div>
+      <div class="fb-content">
+        <strong>{{ fb.user_id.fullName }}</strong>
+        <div class="rating-stars">
+          <mat-icon
+            *ngFor="let s of [1, 2, 3, 4, 5]"
+            [style.color]="s <= fb.rating ? 'gold' : 'gray'"
+          >
+            star
+          </mat-icon>
+        </div>
+        <p>{{ fb.comment }}</p>
+      </div>
+    </div>
+  </div>
+</div>

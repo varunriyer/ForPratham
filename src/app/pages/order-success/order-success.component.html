@@ -1,0 +1,33 @@
+<div class="success-container">
+  <img src="order-success.jpeg" alt="Success" class="success-icon" />
+  <h2>Order Placed Successfully</h2>
+  <p class="confirmation-text">
+    Hurray!!! Your Order is Confirmed.<br />
+    The Order Id is <strong>#{{ orderId }}<br /></strong> Save the Order Id for
+    further communication.
+  </p>
+
+  <table class="info-table">
+    <thead>
+      <tr>
+        <th>Email us</th>
+        <th>Contact us</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>adminbookstore.com</td>
+        <td>+91 8163475881</td>
+        <td>
+          42, 14th Main, 15th Cross, Sector 4 ,opp to BDA complex, near
+          Kumarakom restaurant, HSR Layout, Bangalore 560034
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button mat-flat-button color="primary" (click)="continueShopping()">
+    CONTINUE SHOPPING
+  </button>
+</div>

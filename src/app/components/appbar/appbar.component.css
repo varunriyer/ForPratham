@@ -1,0 +1,139 @@
+.custom-toolbar {
+  background-color: #a03037;
+  justify-content: space-around;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: 60px;
+}
+
+.title {
+  top: 17px;
+  left: 201px;
+  width: 91px;
+  height: 26px;
+  text-align: left;
+  font: normal normal normal 20px/26px Roboto, sans-serif;
+  letter-spacing: 0px;
+  color: #ffffff;
+  text-transform: capitalize;
+  opacity: 1;
+}
+
+.logo {
+  top: 19px;
+  left: 164px;
+  width: 31px;
+  height: 24px;
+
+  /* background: transparent url("img/education.png") 0% 0% no-repeat padding-box */
+  opacity: 1;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-bar {
+  margin-left: 8%;
+  background-color: #fcfcfc;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  border-radius: 8px;
+  padding: 0 12px;
+  color: #9d9d9d;
+  width: 490px;
+}
+
+.search-bar input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-bar mat-icon {
+  margin-right: 8px;
+  font-size: 24px;
+  flex-shrink: 0;
+  color: #9d9d9d;
+}
+
+.right-section {
+  display: flex;
+  gap: 48px;
+}
+
+.right-section button {
+  background-color: transparent;
+  border: none;
+}
+.right-section mat-icon {
+  color: #ffffff;
+}
+
+.right-section span {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+}
+
+/* Mat menu styling (checkout/change later) [START]  */
+
+.menu-header {
+  padding: 12px 16px;
+  text-align: left;
+}
+
+.menu-header p {
+  margin: 4px 0;
+}
+
+.subtext {
+  font-size: 13px;
+  color: #757575;
+}
+
+.menu-greeting {
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px 16px 4px;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+button[mat-stroked-button] {
+  margin-top: 8px;
+  width: 100%;
+}
+
+button[mat-menu-item] mat-icon {
+  margin-right: 8px;
+}
+
+.mat-menu-panel {
+  padding: 0 !important;
+}
+
+.mat-menu-content {
+  padding: 0 !important;
+  min-width: 220px;
+}
+
+mat-divider {
+  margin: 8px 0;
+  border-top: 1px solid #e0e0e0; /* Light grey */
+  opacity: 0.8;
+}
+/* MAT MENU STYLING END */

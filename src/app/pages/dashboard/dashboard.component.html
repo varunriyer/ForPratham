@@ -1,0 +1,8 @@
+<div class="dashboard-layout">
+  <app-appbar></app-appbar>
+  <div class="dashboard-content">
+    <router-outlet></router-outlet>
+  </div>
+
+  <app-footer *ngIf="!hideFooter"></app-footer>
+</div>

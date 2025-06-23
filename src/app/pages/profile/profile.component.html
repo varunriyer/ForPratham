@@ -1,0 +1,115 @@
+<div class="profile-container">
+  <div class="breadcrumbs">Home / Profile</div>
+
+  <div class="section-header">
+    <h2>Personal Details</h2>
+    <div class="action-buttons">
+      <ng-container *ngIf="!isEditingPersonal">
+        <button class="edit-btn" (click)="enableEdit('personal')">Edit</button>
+      </ng-container>
+      <ng-container *ngIf="isEditingPersonal">
+        <button class="cancel-btn" (click)="cancelEdit('personal')">
+          Cancel
+        </button>
+        <button mat-flat-button color="primary" (click)="saveProfile()">
+          SAVE
+        </button>
+      </ng-container>
+    </div>
+  </div>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Full Name</mat-label>
+    <input
+      style="text-transform: capitalize"
+      matInput
+      [disabled]="!isEditingPersonal"
+      [(ngModel)]="user.fullName"
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Email Id</mat-label>
+    <input matInput disabled [(ngModel)]="user.email" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Password</mat-label>
+    <input
+      matInput
+      type="password"
+      [disabled]="!isEditingPersonal"
+      [(ngModel)]="user.password"
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Mobile Number</mat-label>
+    <input matInput [disabled]="!isEditingPersonal" [(ngModel)]="user.phone" />
+  </mat-form-field>
+
+  <div class="section-header">
+    <h2>Address Details</h2>
+    <div class="action-buttons">
+      <ng-container *ngIf="!isEditingAddress">
+        <button class="edit-btn" (click)="enableEdit('address')">Edit</button>
+      </ng-container>
+      <ng-container *ngIf="isEditingAddress">
+        <button class="cancel-btn" (click)="cancelEdit('address')">
+          Cancel
+        </button>
+        <button mat-flat-button color="primary" (click)="saveAddress()">
+          SAVE
+        </button>
+      </ng-container>
+    </div>
+  </div>
+
+  <div *ngIf="user.address?.length">
+    <p>
+      <strong>1.{{ user.address[0].type.toUpperCase() }}</strong>
+    </p>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Address</mat-label>
+      <textarea
+        matInput
+        rows="3"
+        [disabled]="!isEditingAddress"
+        [(ngModel)]="user.address[0].fullAddress"
+      ></textarea>
+    </mat-form-field>
+
+    <div class="address-row">
+      <mat-form-field appearance="fill" class="half-width">
+        <mat-label>City/Town</mat-label>
+        <input
+          matInput
+          [disabled]="!isEditingAddress"
+          [(ngModel)]="user.address[0].city"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="half-width">
+        <mat-label>State</mat-label>
+        <input
+          matInput
+          [disabled]="!isEditingAddress"
+          [(ngModel)]="user.address[0].state"
+        />
+      </mat-form-field>
+    </div>
+
+    <label>Type</label>
+    <mat-radio-group
+      [(ngModel)]="user.address[0].type"
+      [disabled]="!isEditingAddress"
+    >
+      <mat-radio-button value="home">Home</mat-radio-button>
+      <mat-radio-button value="work">Work</mat-radio-button>
+      <mat-radio-button value="other">Other</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <button class="add-address-btn">Add New Address</button>
+</div>
